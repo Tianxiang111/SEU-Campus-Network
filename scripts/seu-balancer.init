@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+START=99
+STOP=10
+USE_PROCD=1
+
+# Change this to the router's actual LAN before starting the service.
+LAN_CIDR="192.168.8.0/24"
+LAN_DEVICE="br-lan"
+
+# Empty by default. Only opt in if this radio is dedicated to wan2 STA.
+REPAIR_RADIO=""
+
+start_service() {
+    procd_open_instance
+    procd_set_param command /usr/bin/python3 /usr/sbin/seu-balancer
+    procd_set_param env "SEU_LAN_CIDR=$LAN_CIDR" "SEU_LAN_DEVICE=$LAN_DEVICE" "SEU_REPAIR_RADIO=$REPAIR_RADIO"
+    procd_set_param respawn 3600 5 5
+    procd_set_param stdout 0
+    procd_set_param stderr 0
+    procd_close_instance
+}
+
+# Stopping alone leaves the policies in place. For complete removal, use
+# /usr/sbin/cleanup-seu-balancer after reading docs/scripts.md.

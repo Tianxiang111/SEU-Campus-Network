@@ -1,0 +1,12 @@
+[
+  {
+    "line": "wan1",
+    "username": "<ACCOUNT_A>",
+    "password": "<PASSWORD_A>"
+  },
+  {
+    "line": "wan2",
+    "username": "<ACCOUNT_B>",
+    "password": "<PASSWORD_B>"
+  }
+]

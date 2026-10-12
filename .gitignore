@@ -1,0 +1,11 @@
+# Keep account/session data and router backups out of the public repository.
+accounts.json
+accounts.*.json
+!accounts.example.json
+client_data.json
+*.log
+*.tar.gz
+*.bak
+__pycache__/
+*.py[cod]
+.DS_Store
