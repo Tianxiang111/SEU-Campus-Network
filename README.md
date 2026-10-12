@@ -321,6 +321,6 @@ dnsmasq → Mihomo → dnsmasq → ……  （循环）
 
 按需求选择做到哪一步即可：只想共享一个账号，WISP 就能开始；需要多账号与故障处理，再考虑 OpenWrt；需要统一代理和 DNS 管理，最后增加这些服务。选路由器时，先看目标功能是否有可靠支持，再看无线能力、CPU、内存和实际可写空间。
 
-## 5. Acknowledge
+## 6. Acknowledgement
 部分思路参考SiliCOM电脑协会的老同志，感谢jg在本项目中提供的一些帮助。
 
